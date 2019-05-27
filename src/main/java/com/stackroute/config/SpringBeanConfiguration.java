@@ -4,6 +4,7 @@ import com.stackroute.awareInterface.ApplicationContextAwareDemo;
 import com.stackroute.awareInterface.BeanFactoryAwareDemo;
 import com.stackroute.awareInterface.BeanNameAwareDemo;
 import com.stackroute.awareInterface.ResourceLoaderAwareDemo;
+import com.stackroute.demo.BeanLifecycleDemo;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.factory.annotation.Autowire;
@@ -56,4 +57,9 @@ public class SpringBeanConfiguration {
     public ResourceLoaderAwareDemo resourceLoaderAwareDemo(){
         return new ResourceLoaderAwareDemo();
     }
+    @Bean(initMethod="custominit")
+    public BeanLifecycleDemo beanLifecycleDemo(){
+        return new BeanLifecycleDemo();
+    }
+
 }

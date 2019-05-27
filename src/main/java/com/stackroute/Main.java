@@ -24,6 +24,6 @@ public class Main {
         Movie movie1=ctx.getBean("movie1",Movie.class);
 
         System.out.println(movie1);
-
+        ctx.close();
     }
 }
