@@ -1,14 +1,21 @@
 package com.stackroute.domain;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Movie {
     private int movieId;
     private String movieName;
-    private Actor actor;
+    private Actor actor2;
+
+    public Movie(int movieId, String movieName) {
+        this.movieId = movieId;
+        this.movieName = movieName;
+    }
 
     public Movie(int movieId, String movieName, Actor actor) {
         this.movieId = movieId;
         this.movieName = movieName;
-        this.actor = actor;
+        this.actor2 = actor;
     }
 
     public int getMovieId() {
@@ -28,11 +35,12 @@ public class Movie {
     }
 
     public Actor getActor() {
-        return actor;
+        return actor2;
     }
 
-    public void setActor(Actor actor) {
-        this.actor = actor;
+    @Autowired
+    public void setActor(Actor actor2) {
+        this.actor2 = actor2;
     }
 
     @Override
@@ -40,7 +48,7 @@ public class Movie {
         return "Movie{" +
                 "movieId=" + movieId +
                 ", movieName='" + movieName + '\'' +
-                ", actor=" + actor +
+                ", actor=" + actor2 +
                 '}';
     }
 }

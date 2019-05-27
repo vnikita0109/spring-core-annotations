@@ -2,9 +2,9 @@ package com.stackroute.config;
 
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
+import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
 
 
 @Configuration
@@ -22,26 +22,20 @@ public class SpringBeanConfiguration {
 //        return new Movie(2,"Hwarang",getActor());
 //    }
 
-    @Bean(name = "actor1")
-
-    public Actor getActor1(){
-        return new Actor("Park Seo Joon","Male",30);
-    }
     @Bean(name = "actor2")
 
-    public Actor getActor2(){
-        return new Actor("Park Min Young","Female",30);
+    public Actor getActor(){
+        return new Actor("Park Seo Joon","Male",30);
+    }
+    @Bean(name = "actor")
+
+    public Actor getActor1(){
+        return new Actor("Park Min young","Female",30);
+    }
+    @Bean(name = "movie1",autowire = Autowire.BY_NAME)
+    public Movie getMovie1(){
+        return new Movie(12,"What's Wrong with secretory Kim?");
     }
 
-    @Bean(name = "movie1")
-    @Scope("prototype")
-    public Movie getMovie1(){
-        return new Movie(12,"What's Wrong with secretory Kim?",getActor1());
-    }
-    @Bean(name = {"movie2","movie3"})
-    @Scope("prototype")
-    public Movie getMovie2(){
-        return new Movie(2,"Her private Life",getActor2());
-    }
 
 }

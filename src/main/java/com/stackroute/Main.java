@@ -22,8 +22,8 @@ public class Main {
 //        System.out.println(movie.getMovieName()+" has casted "+movie.getActor());
 
         Movie movie1=ctx.getBean("movie1",Movie.class);
-        Movie movie2=ctx.getBean("movie1",Movie.class);
-        System.out.println(movie1==movie2);
+
+        System.out.println(movie1);
 
     }
 }
