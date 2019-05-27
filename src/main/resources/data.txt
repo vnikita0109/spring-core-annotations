@@ -1,0 +1,2 @@
+"80 days remaining to complete training"
+This data is from text file of resources folder
