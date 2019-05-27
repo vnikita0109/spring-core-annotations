@@ -18,7 +18,12 @@ public class Main {
         ctx.register(AppConfig.class);
         ctx.refresh();
 
-        Movie movie=ctx.getBean(Movie.class,"actor0");
-        System.out.println(movie.getMovieName()+" has casted "+movie.getActor());
+//        Movie movie=ctx.getBean(Movie.class,"actor1");
+//        System.out.println(movie.getMovieName()+" has casted "+movie.getActor());
+
+        Movie movie1=ctx.getBean("movie1",Movie.class);
+        Movie movie2=ctx.getBean("movie1",Movie.class);
+        System.out.println(movie1==movie2);
+
     }
 }
